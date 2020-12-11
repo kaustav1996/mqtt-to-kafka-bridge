@@ -4,15 +4,14 @@ module.exports = {
 
     // mqtt connection options
     mqtt: { // # see https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options
-        url: null,
+        url: 'mqtts://maheshwntwpe.extwirepas.com', //replace with required url [ mqtts: secure mqtt]
         options: {
-            clientId: "example-client",
-            username: "example",
-            password: "1234",
-            host: "some.mqtt.server.com",
-            port: 8080,
-            protocolId: "MQTT",
-            protocolVersion: 4,
+            clientId: "kafka-mqtt-bridge",
+            username: "username",
+            password: "passowrd",
+            host: "mqtts://maheshwntwpe.extwirepas.com", //replace with required url [ mqtts: secure mqtt]
+            port: 8883, // port would be different if not secure mqtt
+            protocol: "mqtts" // protocol
         }
     },
 
@@ -22,7 +21,7 @@ module.exports = {
         noptions: {
             //"debug": "all",
 
-            "metadata.broker.list": "localhost:9092",
+            "metadata.broker.list": "18.141.44.17:9092", //replace with required kafka broker url
             "client.id": "mqtt-bridge-example-client",
             "event_cb": true,
             "compression.codec": "none",
@@ -55,7 +54,7 @@ module.exports = {
         //"*": "kafka-test", // from all to single kafka-test topic
         //"mqtt-topic": "kafka-topic", // from mqtt-topic to kafka-topic only
 
-        "*": "mqtt-bridge-example"
+        "gw-event/received_data/wm-maheshwntwpe/sink0/14210091/1/1": "encoded_instant_data"
     },
 
     // if routed messages should be logged to debug

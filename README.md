@@ -1,8 +1,5 @@
 # mqtt-to-kafka-bridge - consume, (etl/mirror), produce
 
-[![npm version](https://badge.fury.io/js/mqtt-to-kafka-bridge.svg)](https://badge.fury.io/js/mqtt-to-kafka-bridge)
-[![Docker Repository on Quay](https://quay.io/repository/nodefluent/mqtt-to-kafka-bridge/status "Docker Repository on Quay")](https://quay.io/repository/nodefluent/mqtt-to-kafka-bridge)
-
 ## Intro
 
 `mqtt-to-kafka-bridge` allows you to quickly setup a fast (about messages 2 million/sec) and lightweight (about 100 MB RAM)
@@ -11,6 +8,8 @@ You can configure **routing** (move messags from MQTT topics to certain Kafka to
 on MQTT consume, as well as on Kafka produce. You just pass everything in a simple JSON/JS config object.
 
 ## How to use?
+
+Run <code>npm install</code> to install dependencies. <br>
 
 Just check out the example [here](example/sample.js) it also gives you description on the configuration options.
 You can find the sample configuration [here](example/config.js).
@@ -21,4 +20,4 @@ The bridge spins up an http server, which can be used to check its health status
 
 ## Maintainer
 
-Build with :heart: :pizza: and :coffee: by [nodefluent](https://github.com/nodefluent)
+Build with :heart: :pizza: and :coffee: by [nodefluent](https://github.com/nodefluent) and then forked by [kaustav1996](https://github.com/kaustav1996)
